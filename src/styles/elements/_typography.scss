@@ -1,0 +1,11 @@
+html {
+  font-family: $_font-family;
+}
+
+@each $name, $fontSize in $fontSizes {
+  #{$name} {
+    font-size: $fontSize;
+    line-height: 1.2;
+    margin: 1em 0;
+  }
+}
