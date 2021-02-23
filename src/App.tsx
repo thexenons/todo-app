@@ -1,3 +1,5 @@
-const App = () => <div>TODO App</div>;
+const App = (): JSX.Element => {
+  return <div>TODO App</div>
+}
 
-export default App;
+export default App
