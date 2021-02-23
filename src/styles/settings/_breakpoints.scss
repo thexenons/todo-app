@@ -1,0 +1,17 @@
+$breakpoint-sm: 480px;
+$breakpoint-md: 600px;
+$breakpoint-lg: 900px;
+$breakpoint-xl: 1200px;
+
+$breakpoints: (
+  'sm': $breakpoint-sm,
+  'md': $breakpoint-md,
+  'lg': $breakpoint-lg,
+  'xl': $breakpoint-xl,
+);
+
+:root {
+  @each $name, $breakpoint in $breakpoints {
+    --data-breakpoint-#{$name}: #{$breakpoint};
+  }
+}

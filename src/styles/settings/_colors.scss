@@ -1,0 +1,39 @@
+$_white: #fff;
+$_gray-100: #f8f9fa;
+$_gray-200: #e9ecef;
+$_gray-300: #dee2e6;
+$_gray-400: #ced4da;
+$_gray-500: #adb5bd;
+$_gray-600: #6c757d;
+$_gray-700: #495057;
+$_gray-800: #343a40;
+$_gray-900: #212529;
+$_black: #000;
+
+$_blue: #0d6efd;
+$_indigo: #6610f2;
+$_purple: #6f42c1;
+$_pink: #d63384;
+$_red: #dc3545;
+$_orange: #fd7e14;
+$_yellow: #ffc107;
+$_green: #198754;
+$_teal: #20c997;
+$_cyan: #0dcaf0;
+
+$colors: (
+  'primary': $_blue,
+  'secondary': $_gray-600,
+  'success': $_green,
+  'info': $_cyan,
+  'warning': $_yellow,
+  'danger': $_red,
+  'light': $_gray-100,
+  'dark': $_gray-900,
+);
+
+:root {
+  @each $name, $color in $colors {
+    --data-color-#{$name}: #{$color};
+  }
+}

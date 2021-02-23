@@ -1,0 +1,22 @@
+$_fs-1: 2.5rem;
+$_fs-2: 2rem;
+$_fs-3: 1.75rem;
+$_fs-4: 1.5rem;
+$_fs-5: 1.25rem;
+$_fs-6: 1rem;
+
+$fontSizes: (
+  'h1': $_fs-1,
+  'h2': $_fs-2,
+  'h3': $_fs-3,
+  'h4': $_fs-4,
+  'h5': $_fs-5,
+  'h6': $_fs-6,
+  'p': $_fs-6,
+);
+
+:root {
+  @each $name, $fontSize in $fontSizes {
+    --data-font-size-#{$name}: #{$fontSize};
+  }
+}

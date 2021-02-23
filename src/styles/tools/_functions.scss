@@ -1,0 +1,15 @@
+@function breakpoint($breakpoint-name) {
+  @return var(--data-breakpoint-#{$breakpoint-name});
+}
+
+@function color($color-name) {
+  @return var(--data-color-#{$color-name});
+}
+
+@function spacing($spacing-number) {
+  @return calc(16px * #{$spacing-number});
+}
+
+@function fontSize($fontSize-name) {
+  @return var(--data-font-size-#{$fontSize-name});
+}
