@@ -1,5 +1,5 @@
-import List from '../../molecules/List'
-import TodoListActions from '../../molecules/TodoListActions'
+import List from '@molecules/List'
+import TodoListActions from '@molecules/TodoListActions'
 
 const TodoList = (): JSX.Element => (
   <div>

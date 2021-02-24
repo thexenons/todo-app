@@ -1,4 +1,4 @@
-import List from '../../molecules/List'
+import List from '@molecules/List'
 
 const SidebarList = (): JSX.Element => (
   <aside>
