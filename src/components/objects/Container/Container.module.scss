@@ -8,7 +8,7 @@
   padding: 0 spacing(0.5);
   width: 100%;
   max-width: 100%;
-  transition: max-width $transition-duration_default, padding $transition-duration_default;
+  transition: max-width $transition-duration_fast, padding $transition-duration_fast;
 
   @include media(sm) {
     max-width: $breakpoint-sm;

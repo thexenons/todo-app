@@ -1,6 +1,6 @@
-import AppTitle from '@molecules/AppTitle'
 import Container from '@objects/Container'
 import { ReactChild } from 'react'
+
 import classes from './Layout.module.scss'
 
 type LayoutProps = {
@@ -9,9 +9,9 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <div className={classes.layout}>
-    <AppTitle />
+    <h1 className={classes['layout-title']}>Things I need to do</h1>
     <Container>
-      <div className={classes.content}>{children}</div>
+      <div className={classes['layout-content']}>{children}</div>
     </Container>
   </div>
 )
