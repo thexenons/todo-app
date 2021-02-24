@@ -1,0 +1,37 @@
+@import 'styles/tools/mixins';
+@import 'styles/tools/functions';
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr 1fr;
+  grid-template-areas:
+    'title'
+    'sidebar'
+    'main';
+  background-color: color(primary);
+  min-height: 100vh;
+  padding: spacing(1);
+
+  @include media(lg) {
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+      'title title'
+      'sidebar main';
+  }
+
+  > * {
+    &:first-child {
+      grid-area: title;
+    }
+
+    &:nth-child(2) {
+      grid-area: sidebar;
+    }
+
+    &:last-child {
+      grid-area: main;
+    }
+  }
+}
