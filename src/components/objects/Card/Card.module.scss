@@ -1,0 +1,23 @@
+@import 'styles/tools/functions';
+
+.card {
+  background: color(light);
+
+  &-header {
+    background: color(lightgray);
+
+    &-title {
+      font-size: spacing(1.5);
+      color: color(dark);
+    }
+
+    &-subtitle {
+      font-size: spacing(1);
+      color: color(text-gray);
+    }
+  }
+
+  &-content {
+    padding: spacing(1);
+  }
+}
