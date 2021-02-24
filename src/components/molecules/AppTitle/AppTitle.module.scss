@@ -1,0 +1,13 @@
+@import 'styles/tools/functions';
+@import 'styles/tools/mixins';
+
+.appTitle {
+  color: color(primary-darken-25);
+  opacity: 0.7;
+  margin: spacing(0, 0, 2, 0);
+  text-align: center;
+
+  @include media(lg) {
+    font-size: spacing(5);
+  }
+}
