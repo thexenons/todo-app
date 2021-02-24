@@ -1,0 +1,29 @@
+@import 'styles/settings/animations';
+@import 'styles/settings/breakpoints';
+@import 'styles/tools/mixins';
+@import 'styles/tools/functions';
+
+.container {
+  margin: 0 auto;
+  padding: 0 spacing(0.5);
+  width: 100%;
+  max-width: 100%;
+  transition: max-width $transition-duration_default, padding $transition-duration_default;
+
+  @include media(sm) {
+    max-width: $breakpoint-sm;
+  }
+
+  @include media(md) {
+    max-width: $breakpoint-md;
+  }
+
+  @include media(lg) {
+    max-width: $breakpoint-lg;
+    padding: 0 spacing(1);
+  }
+
+  @include media(xl) {
+    max-width: $breakpoint-xl;
+  }
+}
