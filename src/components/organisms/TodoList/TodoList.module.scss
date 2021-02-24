@@ -1,0 +1,7 @@
+@import 'styles/tools/functions';
+
+.todoList {
+  > * + * {
+    margin-top: spacing(1);
+  }
+}

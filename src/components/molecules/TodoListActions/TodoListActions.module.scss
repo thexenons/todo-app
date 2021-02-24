@@ -1,0 +1,20 @@
+@import 'styles/tools/functions';
+@import 'styles/tools/mixins';
+@import 'styles/settings/animations';
+
+.todoListActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: color(text-lightgray);
+
+  > div {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity $transition-duration_default;
+
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+}
