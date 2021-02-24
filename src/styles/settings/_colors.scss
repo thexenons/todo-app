@@ -10,19 +10,18 @@ $_gray-800: #343a40;
 $_gray-900: #212529;
 $_black: #000;
 
-$_blue: #0d6efd;
-$_indigo: #6610f2;
-$_purple: #6f42c1;
-$_pink: #d63384;
-$_red: #dc3545;
-$_orange: #fd7e14;
-$_yellow: #ffc107;
-$_green: #198754;
-$_teal: #20c997;
+$_blue: #4285f4;
+$_blue-darken-25: darken($_blue, 25%);
+$_blue-lighten-25: lighten($_blue, 25%);
+$_red: #ea4335;
+$_yellow: #fbbc05;
+$_green: #34a853;
 $_cyan: #0dcaf0;
 
 $colors: (
   'primary': $_blue,
+  'primary-darken-25': $_blue-darken-25,
+  'primary-lighten-25': $_blue-lighten-25,
   'secondary': $_gray-600,
   'success': $_green,
   'info': $_cyan,

@@ -6,8 +6,19 @@
   @return var(--data-color-#{$color-name});
 }
 
-@function spacing($spacing-number) {
-  @return calc(16px * #{$spacing-number});
+@function spacing($spacing-number-1, $spacing-number-2: null, $spacing-number-3: null, $spacing-number-4: null) {
+  $spacing: #{1rem * $spacing-number-1};
+  @if ($spacing-number-2) {
+    $spacing: $spacing #{1rem * $spacing-number-2};
+  }
+  @if ($spacing-number-3) {
+    $spacing: $spacing #{1rem * $spacing-number-3};
+  }
+  @if ($spacing-number-4) {
+    $spacing: $spacing #{1rem * $spacing-number-4};
+  }
+
+  @return $spacing;
 }
 
 @function fontSize($fontSize-name) {
