@@ -1,10 +1,26 @@
 @import 'styles/tools/functions';
+@import 'styles/tools/mixins';
+@import 'styles/settings/animations';
 
 .card {
   background: color(light);
 
   &-header {
     background: color(lightgray);
+    display: flex;
+    flex-direction: column;
+    padding: spacing(1, 2);
+    transition: padding $transition-duration_fast;
+
+    @include media(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include media(lg) {
+      padding: spacing(2, 3);
+    }
 
     &-title {
       font-size: spacing(1.5);
@@ -18,6 +34,11 @@
   }
 
   &-content {
-    padding: spacing(1);
+    padding: spacing(2, 1);
+    transition: padding $transition-duration_fast;
+
+    @include media(lg) {
+      padding: spacing(3, 2);
+    }
   }
 }
