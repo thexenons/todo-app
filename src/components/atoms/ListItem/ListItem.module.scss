@@ -1,0 +1,7 @@
+.listItem {
+  &--with-separators {
+    & + & {
+      border-top: 1px solid black;
+    }
+  }
+}

@@ -1,10 +1,16 @@
-const List = (): JSX.Element => (
+import ListItem from '@atoms/ListItem'
+
+type ListProps = {
+  enableItemSeparators?: boolean
+}
+
+const List = ({enableItemSeparators}: ListProps): JSX.Element => (
   <div>
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <ListItem enableItemSeparator={enableItemSeparators}>1</ListItem>
+      <ListItem enableItemSeparator={enableItemSeparators}>2</ListItem>
+      <ListItem enableItemSeparator={enableItemSeparators}>3</ListItem>
+      <ListItem enableItemSeparator={enableItemSeparators}>4</ListItem>
     </ul>
     <span>+</span>
     <input type="text" />
