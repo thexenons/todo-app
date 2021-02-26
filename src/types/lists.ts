@@ -1,7 +1,7 @@
 export type ListType = {
   key: string
   title: string
-  items: ListItemType[],
+  items: ListItemType[]
   active?: boolean
 }
 

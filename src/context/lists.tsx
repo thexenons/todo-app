@@ -26,11 +26,11 @@ const initialState = {
       items: [
         {
           title: 'Completed Task',
-          completed: true
+          completed: true,
         },
         {
-          title: 'Not completed Task'
-        }
+          title: 'Not completed Task',
+        },
       ],
     },
   },
