@@ -21,7 +21,7 @@
 }
 
 @mixin hover {
-  &:not([disabled]):hover {
+  &:not([aria-disabled]):hover {
     @content;
   }
 }

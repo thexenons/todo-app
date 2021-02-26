@@ -1,14 +1,12 @@
 import { ReactChild } from 'react'
 import cn from 'classnames'
-import classes from './ListItem.module.scss'
 
-type ListItemProps = {
+export type ListItemProps = {
   children: ReactChild
-  enableItemSeparator?: boolean
+  completed?: boolean,
+  active?: boolean,
 }
 
-const ListItem = ({ children, enableItemSeparator }: ListItemProps): JSX.Element => (
-  <li className={cn(classes.listItem, { [classes['listItem--with-separators']]: enableItemSeparator })}>{children}</li>
-)
+const ListItem = ({ children, completed, active }: ListItemProps): JSX.Element => <li className={cn({ completed, active })}>{children}</li>
 
 export default ListItem

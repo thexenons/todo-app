@@ -1,0 +1,10 @@
+@import 'styles/tools/functions';
+
+.input-wrapper {
+  display: flex;
+
+  span {
+    margin-right: relativeSpacing(0.5);
+    font-weight: bold;
+  }
+}

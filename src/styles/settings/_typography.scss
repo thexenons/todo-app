@@ -16,9 +16,3 @@ $fontSizes: (
   'h6': $_fs-6,
   'p': $_fs-6,
 );
-
-:root {
-  @each $name, $fontSize in $fontSizes {
-    --data-font-size-#{$name}: #{$fontSize};
-  }
-}

@@ -9,9 +9,3 @@ $breakpoints: (
   'lg': $breakpoint-lg,
   'xl': $breakpoint-xl,
 );
-
-:root {
-  @each $name, $breakpoint in $breakpoints {
-    --data-breakpoint-#{$name}: #{$breakpoint};
-  }
-}

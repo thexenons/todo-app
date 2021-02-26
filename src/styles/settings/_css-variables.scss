@@ -1,0 +1,13 @@
+:root {
+  @each $name, $color in $colors {
+    --data-color-#{$name}: #{$color};
+  }
+
+  @each $name, $breakpoint in $breakpoints {
+    --data-breakpoint-#{$name}: #{$breakpoint};
+  }
+
+  @each $name, $fontSize in $fontSizes {
+    --data-font-size-#{$name}: #{$fontSize};
+  }
+}

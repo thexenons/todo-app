@@ -1,0 +1,12 @@
+input {
+  &[type='text'] {
+    color: currentColor;
+    background: transparent;
+    border: none;
+    border-bottom: relativeSpacing(0.075) solid currentColor;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

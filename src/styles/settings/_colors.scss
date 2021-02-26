@@ -10,11 +10,13 @@ $_gray-800: #343a40;
 $_gray-900: #212529;
 $_black: #000;
 
-$_blue: #4285f4;
+// $_blue: #4285f4;
+$_blue: #0091cb;
 $_blue-darken-25: darken($_blue, 25%);
 $_blue-lighten-25: lighten($_blue, 25%);
 $_red: #ea4335;
 $_yellow: #fbbc05;
+$_orange: #f58e2e;
 $_green: #34a853;
 $_cyan: #0dcaf0;
 
@@ -22,21 +24,17 @@ $colors: (
   'primary': $_blue,
   'primary-darken-25': $_blue-darken-25,
   'primary-lighten-25': $_blue-lighten-25,
+  'secondary': $_orange,
   'success': $_green,
   'info': $_cyan,
   'warning': $_yellow,
   'danger': $_red,
   'light': $_gray-100,
   'dark': $_gray-900,
+  'gray': $_gray-600,
   'lightgray': $_gray-300,
   'text-dark': $_gray-900,
   'text-light': $_gray-100,
   'text-gray': $_gray-600,
   'text-lightgray': $_gray-300,
 );
-
-:root {
-  @each $name, $color in $colors {
-    --data-color-#{$name}: #{$color};
-  }
-}

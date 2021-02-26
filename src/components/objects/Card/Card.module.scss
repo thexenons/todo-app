@@ -25,6 +25,7 @@
     &-title {
       font-size: spacing(1.5);
       color: color(dark);
+      font-weight: bold;
     }
 
     &-subtitle {
@@ -34,11 +35,11 @@
   }
 
   &-content {
-    padding: spacing(2, 1);
+    padding: spacing(1);
     transition: padding $transition-duration_fast;
 
     @include media(lg) {
-      padding: spacing(3, 2);
+      padding: spacing(2);
     }
   }
 }

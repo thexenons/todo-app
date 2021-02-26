@@ -1,19 +1,25 @@
-import ListItem from '@atoms/ListItem'
+import classes from './List.module.scss'
+import ListItem, { ListItemProps } from '@atoms/ListItem'
+import cn from 'classnames'
 
 type ListProps = {
   enableItemSeparators?: boolean
+  interactive?: boolean
+  items?: ListItemProps[]
+  interactiveActive?: boolean
 }
 
-const List = ({enableItemSeparators}: ListProps): JSX.Element => (
+const List = ({ enableItemSeparators, interactive, interactiveActive, items }: ListProps): JSX.Element => (
   <div>
-    <ul>
-      <ListItem enableItemSeparator={enableItemSeparators}>1</ListItem>
-      <ListItem enableItemSeparator={enableItemSeparators}>2</ListItem>
-      <ListItem enableItemSeparator={enableItemSeparators}>3</ListItem>
-      <ListItem enableItemSeparator={enableItemSeparators}>4</ListItem>
+    <ul className={cn({ ['with-separators']: enableItemSeparators, interactive, 'interactive-active': interactiveActive })}>
+      {items?.map((item, index) => (
+        <ListItem key={index} {...item} />
+      ))}
     </ul>
-    <span>+</span>
-    <input type="text" />
+    <div className={classes['input-wrapper']}>
+      <span>+</span>
+      <input type="text" />
+    </div>
   </div>
 )
 

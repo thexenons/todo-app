@@ -1,6 +1,8 @@
 @import 'styles/tools/functions';
 
 .todoList {
+  font-size: spacing(1.25);
+
   > * + * {
     margin-top: spacing(1);
   }
