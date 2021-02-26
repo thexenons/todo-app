@@ -5,7 +5,11 @@
 .layout {
   background-color: color(primary);
   min-height: 100vh;
-  padding: spacing(1);
+  padding: spacing(0.5);
+
+  @include media(sm) {
+    padding: spacing(1);
+  }
 
   &-title {
     color: color(primary-darken-25);
@@ -29,6 +33,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: spacing(1);
+    min-height: 25vh;
 
     @include media(lg) {
       grid-template-columns: spacing(20) 1fr;

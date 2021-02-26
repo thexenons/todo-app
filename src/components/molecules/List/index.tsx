@@ -8,11 +8,11 @@ import AddIcon from '@material-ui/icons/Add'
 
 type ListProps = {
   enableItemSeparators?: boolean
+  items: ListItemType[]
   interactive?: boolean
-  items?: ListItemType[]
   interactiveActive?: boolean
   onAdd?: (value: string) => void // eslint-disable-line
-  onDelete?: (index: number) => void // eslint-disable-line
+  onDelete?: (index: number, item?: ListItemType | ListType) => void // eslint-disable-line
   onComplete?: (index: number) => void // eslint-disable-line
   onActivate?: (index: number, item?: ListItemType | ListType) => void // eslint-disable-line
 }
@@ -31,11 +31,15 @@ const List = ({ enableItemSeparators, interactive, interactiveActive, items, onA
 
   return (
     <div>
-      <ul className={cn({ ['with-separators']: enableItemSeparators, interactive, 'interactive-active': interactiveActive })}>
-        {items?.map((item, index) => (
-          <ListItem key={index} onClick={() => handleItemClick(index, item)} onDelete={() => onDelete?.(index)} {...item} />
-        ))}
-      </ul>
+      {items.length > 0 ? (
+        <ul className={cn({ ['with-separators']: enableItemSeparators, interactive, 'interactive-active': interactiveActive })}>
+          {items?.map((item, index) => (
+            <ListItem key={index} onClick={() => handleItemClick(index, item)} onDelete={() => onDelete?.(index, item)} {...item} />
+          ))}
+        </ul>
+      ) : (
+        <p className={classes.noItemsMessage}>Add items to view them here</p>
+      )}
       {onAdd && (
         <div className={classes['input-wrapper']}>
           <span>

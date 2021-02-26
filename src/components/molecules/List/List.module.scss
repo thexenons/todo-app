@@ -1,10 +1,15 @@
 @import 'styles/tools/functions';
 
 .input-wrapper {
-  display: flex;
-
   span {
     margin-right: relativeSpacing(0.5);
     font-weight: bold;
   }
+}
+
+.noItemsMessage {
+  margin: relativeSpacing(0.5, 0);
+  padding: relativeSpacing(1, 0);
+  text-align: center;
+  color: currentColor;
 }

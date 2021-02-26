@@ -1,8 +1,9 @@
 import List from '@molecules/List'
 import TodoListActions from '@molecules/TodoListActions'
 import Card from '@objects/Card'
-import { useActiveList, useAddItemToActiveList, useCompleteItemToActiveList, useDeleteItemToActiveList, useRemainingItems } from '../../../hooks/lists'
+import { CSSTransition } from 'react-transition-group'
 
+import { useActiveList, useAddItemToActiveList, useCompleteItemToActiveList, useDeleteItemToActiveList, useRemainingItems } from '../../../hooks/lists'
 import classes from './TodoList.module.scss'
 
 const TodoList = (): JSX.Element => {
@@ -14,20 +15,23 @@ const TodoList = (): JSX.Element => {
 
   return (
     <div className={classes.todoList}>
-      {activeList ? (
-        <>
-          <Card title={activeList.title} subtitle={`Tasks remaining (${remainingItems})`}>
-            <List items={activeList.items} interactive enableItemSeparators onAdd={addItem} onDelete={deleteItem} onComplete={completeItem} />
+      <CSSTransition in={!!activeList} timeout={0} classNames="fade-scale">
+        <div className={classes['todoList-card']}>
+          <Card title={activeList?.title || ''} subtitle={!!activeList && `Tasks remaining (${remainingItems})`}>
+            {activeList && (
+              <List items={activeList?.items || []} interactive enableItemSeparators onAdd={addItem} onDelete={deleteItem} onComplete={completeItem} />
+            )}
           </Card>
           <TodoListActions />
-        </>
-      ) : (
+        </div>
+      </CSSTransition>
+      <CSSTransition in={!activeList} timeout={0} classNames="fade-scale">
         <div className={classes.selectList}>
           <div>
             <span>↑</span> Select a item from the list
           </div>
         </div>
-      )}
+      </CSSTransition>
     </div>
   )
 }

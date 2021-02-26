@@ -1,8 +1,9 @@
-import { useContext } from 'react'
-import { GlobalStateContext } from '../context/lists'
-import { ListType } from 'src/types/lists'
 import { getCompletedItems, getRemainingsItems } from '@utils/lists'
+import { useContext } from 'react'
+import { ListType } from 'src/types/lists'
 import { v4 as uuidv4 } from 'uuid'
+
+import { GlobalStateContext } from '../context/lists'
 
 export const useLists = (): ListType[] => {
   const { globalState } = useContext(GlobalStateContext)
@@ -54,11 +55,12 @@ export const useAddList = (): any => {
 export const useDeleteList = (): any => {
   const { globalState, setGlobalState } = useContext(GlobalStateContext)
 
-  return () => {
+  return (_: number, item: ListType) => {
     const newGlobalState = { ...globalState }
 
-    newGlobalState.activeList = ''
-    delete newGlobalState.lists[globalState.activeList]
+    const deleteKey = item?.key || newGlobalState.activeList
+    if (deleteKey === newGlobalState.activeList) newGlobalState.activeList = ''
+    delete newGlobalState.lists[deleteKey]
 
     setGlobalState(newGlobalState)
   }
@@ -73,7 +75,7 @@ export const useRemainingItems = (): number => {
 export const useCompletedItems = (): number => {
   const activeList = useActiveList()
 
-  return activeList.items ? getCompletedItems(activeList.items) : 0
+  return activeList?.items ? getCompletedItems(activeList.items) : 0
 }
 
 export const useAddItemToActiveList = (): any => {
@@ -92,7 +94,7 @@ export const useDeleteItemToActiveList = (): any => {
 
   return (index: number): void => {
     const newGlobalState = { ...globalState }
-    delete newGlobalState.lists[globalState.activeList].items[index]
+    newGlobalState.lists[globalState.activeList].items.splice(index, 1)
 
     setGlobalState(newGlobalState)
   }

@@ -1,5 +1,6 @@
 @import 'styles/settings/animations';
 @import 'styles/tools/functions';
+@import 'styles/tools/mixins';
 
 .listItem {
   display: flex;
@@ -16,10 +17,14 @@
 .deleteButton {
   color: color(danger);
   font-size: relativeSpacing(1.5);
-  opacity: 0;
-  transition: opacity $transition-duration_default;
+  transition: opacity $transition-duration_fast;
 
-  svg {
+  @include media(sm) {
+    opacity: 0;
+    transition: opacity $transition-duration_fast;
+
+    svg {
       font-size: inherit;
+    }
   }
 }

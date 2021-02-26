@@ -6,15 +6,17 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 const ListItem = ({ title, completed, active, onClick, onDelete }: ListItemType): JSX.Element => (
   <li className={cn(classes.listItem, { completed, active })} onClick={onClick}>
     <span>{title}</span>
-    <span
-      className={classes.deleteButton}
-      onClick={(e) => {
-        e.stopPropagation()
-        onDelete?.()
-      }}
-    >
-      <DeleteForeverIcon />
-    </span>
+    {onDelete && (
+      <span
+        className={classes.deleteButton}
+        onClick={(e) => {
+          e.stopPropagation()
+          onDelete?.()
+        }}
+      >
+        <DeleteForeverIcon />
+      </span>
+    )}
   </li>
 )
 

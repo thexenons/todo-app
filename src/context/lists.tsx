@@ -22,8 +22,16 @@ const initialState = {
   lists: {
     [uuid]: {
       key: uuid,
-      title: 'Example',
-      items: [],
+      title: 'Example Tasks',
+      items: [
+        {
+          title: 'Completed Task',
+          completed: true
+        },
+        {
+          title: 'Not completed Task'
+        }
+      ],
     },
   },
 }
