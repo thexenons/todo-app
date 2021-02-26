@@ -9,12 +9,15 @@
   color: color(text-light);
 
   > div {
-    cursor: pointer;
     opacity: 0.7;
     transition: opacity $transition-duration_default;
 
-    @include hover {
-      opacity: 1;
+    &:not(.disabled) {
+      cursor: pointer;
+
+      @include hover {
+        opacity: 1;
+      }
     }
   }
 }

@@ -1,0 +1,25 @@
+@import 'styles/settings/animations';
+@import 'styles/tools/functions';
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    .deleteButton {
+      opacity: 1;
+    }
+  }
+}
+
+.deleteButton {
+  color: color(danger);
+  font-size: relativeSpacing(1.5);
+  opacity: 0;
+  transition: opacity $transition-duration_default;
+
+  svg {
+      font-size: inherit;
+  }
+}

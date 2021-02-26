@@ -1,3 +1,31 @@
 $transition-duration_fast: 0.3s;
 $transition-duration_default: 0.5s;
 $transition-duration_slow: 0.7s;
+
+@keyframes swing_vertical {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 1rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+$animations_swing_vertical: swing_vertical 2s infinite;
+
+@keyframes swing_horizontal {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 1rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+$animations_swing_horizontal: swing_horizontal 2s infinite;

@@ -1,9 +1,47 @@
 @import 'styles/tools/functions';
+@import 'styles/tools/mixins';
+@import 'styles/settings/animations';
 
 .todoList {
   font-size: spacing(1.25);
 
   > * + * {
     margin-top: spacing(1);
+  }
+}
+
+.selectList {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color(text-lightgray);
+  opacity: 0.7;
+  font-size: spacing(2);
+
+  > div {
+    padding-top: spacing(4);
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: $animations_swing_vertical;
+      transition: transform $transition-duration_fast, top $transition-duration_fast, left $transition-duration_fast;
+    }
+
+    @include media(lg) {
+      padding-top: 0;
+      padding-left: spacing(4);
+
+      span {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(-90deg);
+        animation: $animations_swing_horizontal;
+      }
+    }
   }
 }

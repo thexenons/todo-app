@@ -1,31 +1,35 @@
-import classes from './TodoList.module.scss'
 import List from '@molecules/List'
 import TodoListActions from '@molecules/TodoListActions'
 import Card from '@objects/Card'
+import { useActiveList, useAddItemToActiveList, useCompleteItemToActiveList, useDeleteItemToActiveList, useRemainingItems } from '../../../hooks/lists'
 
-const items = [
-  {
-    children: '1',
-    completed: true
-  },
-  {
-    children: '2'
-  },
-  {
-    children: '3'
-  },
-  {
-    children: '4'
-  }
-]
+import classes from './TodoList.module.scss'
 
-const TodoList = (): JSX.Element => (
-  <div className={classes.todoList}>
-    <Card title="Active list" subtitle="Tasks remaining (0)">
-      <List items={items} interactive enableItemSeparators />
-    </Card>
-    <TodoListActions />
-  </div>
-)
+const TodoList = (): JSX.Element => {
+  const activeList = useActiveList()
+  const addItem = useAddItemToActiveList()
+  const deleteItem = useDeleteItemToActiveList()
+  const completeItem = useCompleteItemToActiveList()
+  const remainingItems = useRemainingItems()
+
+  return (
+    <div className={classes.todoList}>
+      {activeList ? (
+        <>
+          <Card title={activeList.title} subtitle={`Tasks remaining (${remainingItems})`}>
+            <List items={activeList.items} interactive enableItemSeparators onAdd={addItem} onDelete={deleteItem} onComplete={completeItem} />
+          </Card>
+          <TodoListActions />
+        </>
+      ) : (
+        <div className={classes.selectList}>
+          <div>
+            <span>↑</span> Select a item from the list
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default TodoList

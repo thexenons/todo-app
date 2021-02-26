@@ -14,7 +14,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:@typescript-eslint/recommended"],
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
     "no-unused-vars": "warn",
     "no-extra-semi": "off",
     "no-class-assign": "off",
