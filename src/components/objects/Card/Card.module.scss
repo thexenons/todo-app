@@ -14,7 +14,7 @@
   }
 
   &-header {
-    background: color(lightgray);
+    background: color(#{'lightgray'});
     display: flex;
     flex-direction: column;
     padding: relativeSpacing(0.8);
