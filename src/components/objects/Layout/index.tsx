@@ -9,7 +9,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <div className={classes.layout}>
-    <h1 className={classes['layout-title']}>Things I need to do</h1>
+    <h1 className={classes['layout-title']}>Things to do</h1>
     <Container>
       <div className={classes['layout-content']}>{children}</div>
     </Container>
