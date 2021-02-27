@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm run start`
 
 Runs the app in the production mode.\
-You must run `npm run build` command before run this command.
+You must run `npm run build` command before run this command.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm run dev`
