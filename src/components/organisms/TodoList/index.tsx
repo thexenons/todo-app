@@ -2,6 +2,7 @@ import List from '@molecules/List'
 import TodoListActions from '@molecules/TodoListActions'
 import Card from '@objects/Card'
 import { CSSTransition } from 'react-transition-group'
+import cn from 'classnames'
 
 import { useActiveList, useAddItemToActiveList, useCompleteItemToActiveList, useDeleteItemToActiveList, useRemainingItems } from '../../../hooks/lists'
 import classes from './TodoList.module.scss'
@@ -25,13 +26,11 @@ const TodoList = (): JSX.Element => {
           <TodoListActions />
         </div>
       </CSSTransition>
-      <CSSTransition in={!activeList} timeout={0} classNames="fade-scale">
-        <div className={classes.selectList}>
-          <div>
-            <span>↑</span> Select a item from the list
-          </div>
+      <div className={cn(classes.selectList, {[classes["selectList--hidden"]]: !!activeList})}>
+        <div>
+          <span>↑</span> Select a item from the list
         </div>
-      </CSSTransition>
+      </div>
     </div>
   )
 }
