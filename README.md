@@ -6,7 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
+
+Runs the app in the production mode.\
+You must run `npm run build` command before run this command.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -28,6 +34,24 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run type-check`
+
+Runs the TypeScript error checker.\
+
+See the section about [tsc CLI Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html) for more information.
+
+### `npm run format`
+
+Run the prettier formatter on all TypeScript, SCSS and json files in the project.\
+
+See the section about [prettier cli](https://prettier.io/docs/en/cli.html) for more information.
+
+### `npm run lint`
+
+Run the linter on all TypeScript files in the project.\
+
+See the section about [eslint cli](https://eslint.org/docs/user-guide/command-line-interface) for more information.
 
 ### `npm run eject`
 
