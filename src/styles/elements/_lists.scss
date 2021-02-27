@@ -25,7 +25,7 @@ li {
     height: relativeSpacing(0.75);
     border: relativeSpacing(0.125) solid color(secondary);
     border-radius: 100%;
-    transition: background-color $transition-duration_default;
+    transition: background-color $transition-duration_fast;
   }
 
   letter-spacing: relativeSpacing(0.04);
@@ -57,7 +57,7 @@ ol {
         left: 0;
         transform: translateY(-50%);
         opacity: 0;
-        transition: opacity $transition-duration_default;
+        transition: opacity $transition-duration_fast;
         pointer-events: none;
       }
 

@@ -5,7 +5,7 @@
 .todoList {
   position: relative;
   font-size: spacing(1);
-  transition: font-size $transition-duration_default;
+  transition: font-size $transition-duration_fast;
 
   > * + * {
     margin-top: spacing(1);
@@ -41,7 +41,7 @@
   opacity: 0.7;
   font-size: spacing(1.5);
   z-index: 1;
-  transition: font-size $transition-duration_default;
+  transition: font-size $transition-duration_fast;
 
   @include media(sm) {
     font-size: spacing(2);

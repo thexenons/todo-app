@@ -1,5 +1,5 @@
 $transition-duration_fast: 0.3s;
-$transition-duration_default: 0.5s;
+$transition-duration_fast: 0.5s;
 $transition-duration_slow: 0.7s;
 
 @keyframes swing_vertical {
@@ -39,7 +39,7 @@ $animations_swing_horizontal: swing_horizontal 2s infinite;
   &-enter-done {
     opacity: 1;
     transform: scale(1);
-    transition: opacity $transition-duration_default, transform $transition-duration_default;
+    transition: opacity $transition-duration_fast, transform $transition-duration_fast;
   }
 
   &-exit {
@@ -50,7 +50,7 @@ $animations_swing_horizontal: swing_horizontal 2s infinite;
   &-exit-done {
     opacity: 0;
     transform: scale(0.75);
-    transition: opacity $transition-duration_default, transform $transition-duration_default;
+    transition: opacity $transition-duration_fast, transform $transition-duration_fast;
     pointer-events: none;
   }
 }
