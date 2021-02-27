@@ -10,6 +10,7 @@ export type ListItemType = {
   title: string
   completed?: boolean
   active?: boolean
+  deleting?: boolean
   onClick?: (...args: any) => void // eslint-disable-line
   onDelete?: (...args: any) => void // eslint-disable-line
 }

@@ -14,17 +14,20 @@
   &-title {
     color: color(primary-darken-25);
     opacity: 0.7;
-    margin: spacing(0, 0, 2, 0);
+    margin: 0;
     text-align: center;
-    font-size: spacing(1.75);
-    transition: margin $transition-duration_fast, font-size $transition-duration_fast;
+    font-size: spacing(2.5);
+    line-height: 2;
+    transition: margin $transition-duration_fast, font-size $transition-duration_fast, line-height $transition-duration_fast;
 
     @include media(sm) {
-      font-size: spacing(2.5);
+      font-size: spacing(4);
+      line-height: 1.5;
     }
 
     @include media(lg) {
       font-size: spacing(5);
+      line-height: 1.2;
       margin: spacing(0, 0, 5, 0);
     }
   }

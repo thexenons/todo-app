@@ -1,6 +1,7 @@
 import { useCompletedItems, useDeleteCompletedItems, useDeleteList } from '@hooks/lists'
-import classes from './TodoListActions.module.scss'
 import cn from 'classnames'
+
+import classes from './TodoListActions.module.scss'
 
 const TodoListActions = (): JSX.Element => {
   const completedItems = useCompletedItems()

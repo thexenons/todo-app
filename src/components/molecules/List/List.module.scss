@@ -16,6 +16,7 @@
 .input-wrapper {
   display: flex;
   align-items: center;
+  margin-bottom: relativeSpacing(0.5);
 
   span {
     display: inline-flex;

@@ -109,9 +109,20 @@ export const useDeleteCompletedItems = (): any => {
   return () => {
     const newGlobalState = { ...globalState }
 
-    newGlobalState.lists[globalState.activeList].items = newGlobalState.lists[globalState.activeList].items.filter((item) => !item.completed)
+    newGlobalState.lists[globalState.activeList].items = newGlobalState.lists[globalState.activeList].items.map((item) => {
+      if (item.completed) {
+        return { ...item, deleting: true }
+      }
+      return item
+    })
 
     setGlobalState(newGlobalState)
+
+    setTimeout(() => {
+      const newGlobalState = { ...globalState }
+      newGlobalState.lists[globalState.activeList].items = newGlobalState.lists[globalState.activeList].items.filter((item) => !item.completed)
+      setGlobalState(newGlobalState)
+    }, 300)
   }
 }
 

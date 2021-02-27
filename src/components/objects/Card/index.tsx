@@ -1,6 +1,7 @@
-import { ReactChild } from 'react'
-import classes from './Card.module.scss'
 import cn from 'classnames'
+import { ReactChild } from 'react'
+
+import classes from './Card.module.scss'
 
 type CardProps = {
   children: ReactChild | ReactChild[]

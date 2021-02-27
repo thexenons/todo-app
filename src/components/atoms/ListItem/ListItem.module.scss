@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: height $transition-duration_fast, padding $transition-duration_fast;
+  transition: height $transition-duration_fast, padding $transition-duration_fast, opacity $transition-duration_fast;
   $self: &;
 
   &:hover {
@@ -39,11 +39,16 @@
     }
   }
 
-  &--deleting {
-    height: 0!important;
-    padding-top: 0!important;
-    padding-bottom: 0!important;
+  &--deleting,
+  &:not(&--appeared) {
+    height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     overflow: hidden;
+  }
+
+  &:not(&--appeared) {
+    background: red;
   }
 }
 

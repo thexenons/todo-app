@@ -1,15 +1,32 @@
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import cn from 'classnames'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ListItemType } from 'src/types/lists'
 
 import classes from './ListItem.module.scss'
 
-const ListItem = ({ title, completed, active, onClick, onDelete }: ListItemType): JSX.Element => {
+const ListItem = ({ title, completed, active, deleting, onClick, onDelete }: ListItemType): JSX.Element => {
   const listItemRef = useRef<HTMLLIElement>(null)
+  const [appeared, setAppeared] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAppeared(true)
+    }, 16.67)
+  }, [])
 
   return (
-    <li ref={listItemRef} className={cn(classes.listItem, { [classes.completed]: completed, completed, active })} onClick={onClick}>
+    <li
+      ref={listItemRef}
+      className={cn(classes.listItem, {
+        [classes.completed]: completed,
+        completed,
+        active,
+        [classes['listItem--appeared']]: appeared,
+        [classes['listItem--deleting']]: deleting,
+      })}
+      onClick={onClick}
+    >
       <span className={classes['listItem-text']}>{title}</span>
       {onDelete && (
         <span

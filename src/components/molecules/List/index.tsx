@@ -1,10 +1,11 @@
-import classes from './List.module.scss'
-import ListItem from '@atoms/ListItem'
-import cn from 'classnames'
-import { ListItemType, ListType } from 'src/types/lists'
 import Input from '@atoms/Input'
-import { useCallback } from 'react'
+import ListItem from '@atoms/ListItem'
 import AddIcon from '@material-ui/icons/Add'
+import cn from 'classnames'
+import { useCallback } from 'react'
+import { ListItemType, ListType } from 'src/types/lists'
+
+import classes from './List.module.scss'
 
 type ListProps = {
   enableItemSeparators?: boolean
@@ -38,6 +39,7 @@ const List = ({ enableItemSeparators, interactive, interactiveActive, items, onA
             title={item.title}
             active={item.active}
             completed={item.completed}
+            deleting={item.deleting}
             onClick={() => handleItemClick(index, item)}
             onDelete={() => onDelete?.(index, item)}
           />
