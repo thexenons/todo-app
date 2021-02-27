@@ -1,15 +1,45 @@
 @import 'styles/tools/functions';
+@import 'styles/settings/animations';
+
+.listWrapper {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list {
+  min-height: relativeSpacing(3.2);
+}
 
 .input-wrapper {
+  display: flex;
+  align-items: center;
+
   span {
+    display: inline-flex;
+    align-items: center;
     margin-right: relativeSpacing(0.5);
     font-weight: bold;
   }
 }
 
 .noItemsMessage {
-  margin: relativeSpacing(0.5, 0);
-  padding: relativeSpacing(1, 0);
   text-align: center;
   color: currentColor;
+  opacity: 0;
+  transition: opacity $transition-duration_fast;
+  padding: relativeSpacing(1, 0);
+  margin: relativeSpacing(0.5, 0);
+  position: absolute;
+  top: calc(50% - #{relativeSpacing(2)});
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  transform: translateY(-50%);
+
+  &--active {
+    opacity: 1;
+  }
 }

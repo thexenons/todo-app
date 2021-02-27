@@ -6,6 +6,7 @@ export type ListType = {
 }
 
 export type ListItemType = {
+  key: string
   title: string
   completed?: boolean
   active?: boolean

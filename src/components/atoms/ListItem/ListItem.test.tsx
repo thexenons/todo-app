@@ -15,7 +15,7 @@ const TestComponent = ({ title, completed, active }: any) => {
 
   return (
     <div>
-      <ListItem title={title} completed={completed} active={active} onClick={handleOnClick} onDelete={handleOnDelete} />
+      <ListItem key={title} title={title} completed={completed} active={active} onClick={handleOnClick} onDelete={handleOnDelete} />
       <div test-id="1">{value}</div>
     </div>
   )

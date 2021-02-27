@@ -6,11 +6,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: height $transition-duration_fast, padding $transition-duration_fast;
+  $self: &;
 
   &:hover {
     .deleteButton {
       opacity: 1;
     }
+  }
+
+  &-text {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 60%;
+      left: 0;
+      width: 0;
+      height: 1px;
+      transform: translateY(-50%);
+      background: currentColor;
+      transition: width $transition-duration_fast;
+    }
+  }
+
+  &.completed {
+    #{$self}-text {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &--deleting {
+    height: 0!important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    overflow: hidden;
   }
 }
 

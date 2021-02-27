@@ -5,7 +5,7 @@ li {
   padding-left: relativeSpacing(1.5);
   padding-top: relativeSpacing(0.5);
   padding-bottom: relativeSpacing(0.5);
-  transition: font-weight $transition-duration_default;
+  height: relativeSpacing(2.741);
 
   &:first-child {
     margin-top: relativeSpacing(0.5);
@@ -28,8 +28,14 @@ li {
     transition: background-color $transition-duration_default;
   }
 
+  letter-spacing: relativeSpacing(0.04);
   &.active {
     font-weight: bold;
+    letter-spacing: 0;
+
+    &::before {
+      background-color: color(secondary);
+    }
   }
 }
 
@@ -76,6 +82,7 @@ ol {
 
       &:hover {
         font-weight: bold;
+        letter-spacing: 0;
       }
     }
   }
@@ -84,6 +91,7 @@ ol {
     li {
       padding-top: relativeSpacing(1);
       padding-bottom: relativeSpacing(1);
+      height: relativeSpacing(3.75);
 
       & + li {
         border-top: 1px solid color(gray);

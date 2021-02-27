@@ -46,6 +46,8 @@
     flex: 1 1 auto;
     padding: relativeSpacing(1);
     transition: padding $transition-duration_fast;
+    display: flex;
+    flex-direction: column;
 
     @include media(lg) {
       padding: relativeSpacing(1.6);

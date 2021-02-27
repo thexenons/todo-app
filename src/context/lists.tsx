@@ -17,6 +17,8 @@ type GlobalStateType = {
 export const GlobalStateContext = createContext({} as GlobalStateType)
 
 const uuid = uuidv4()
+const uuid2 = uuidv4()
+const uuid3 = uuidv4()
 const initialState = {
   activeList: uuid,
   lists: {
@@ -25,10 +27,12 @@ const initialState = {
       title: 'Example Tasks',
       items: [
         {
+          key: uuid2,
           title: 'Completed Task',
           completed: true,
         },
         {
+          key: uuid3,
           title: 'Not completed Task',
         },
       ],

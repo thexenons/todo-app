@@ -2,4 +2,5 @@
 
 .sidebarList {
   color: color(text-light);
+  filter: drop-shadow(0px 0px 1px var(--data-color-dark));
 }

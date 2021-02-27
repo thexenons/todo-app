@@ -48,6 +48,8 @@ export const useAddList = (): any => {
       items: [],
     }
 
+    if (Object.keys(newGlobalState.lists).length === 1) newGlobalState.activeList = uuid
+
     setGlobalState(newGlobalState)
   }
 }
@@ -83,7 +85,8 @@ export const useAddItemToActiveList = (): any => {
 
   return (value: string): void => {
     const newGlobalState = { ...globalState }
-    newGlobalState.lists[globalState.activeList].items.push({ title: value })
+    const uuid = uuidv4()
+    newGlobalState.lists[globalState.activeList].items.push({ key: uuid, title: value })
 
     setGlobalState(newGlobalState)
   }

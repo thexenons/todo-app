@@ -30,16 +30,20 @@ const List = ({ enableItemSeparators, interactive, interactiveActive, items, onA
   )
 
   return (
-    <div>
-      {items.length > 0 ? (
-        <ul className={cn({ ['with-separators']: enableItemSeparators, interactive, 'interactive-active': interactiveActive })}>
-          {items?.map((item, index) => (
-            <ListItem key={index} onClick={() => handleItemClick(index, item)} onDelete={() => onDelete?.(index, item)} {...item} />
-          ))}
-        </ul>
-      ) : (
-        <p className={classes.noItemsMessage}>Add items to view them here</p>
-      )}
+    <div className={classes.listWrapper}>
+      <ul className={cn(classes.list, { ['with-separators']: enableItemSeparators, interactive, 'interactive-active': interactiveActive })}>
+        {items?.map((item, index) => (
+          <ListItem
+            key={item.key}
+            title={item.title}
+            active={item.active}
+            completed={item.completed}
+            onClick={() => handleItemClick(index, item)}
+            onDelete={() => onDelete?.(index, item)}
+          />
+        ))}
+      </ul>
+      <p className={cn(classes.noItemsMessage, { [classes['noItemsMessage--active']]: items.length === 0 })}>Add items to view them here</p>
       {onAdd && (
         <div className={classes['input-wrapper']}>
           <span>

@@ -8,5 +8,10 @@ input {
     &:focus-visible {
       outline: none;
     }
+
+    &::placeholder {
+      color: currentColor;
+      opacity: 0.55;
+    }
   }
 }
