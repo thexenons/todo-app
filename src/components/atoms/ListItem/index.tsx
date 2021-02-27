@@ -13,6 +13,7 @@ const ListItem = ({ title, completed, active, onClick, onDelete }: ListItemType)
           e.stopPropagation()
           onDelete?.()
         }}
+        title="Delete"
       >
         <DeleteForeverIcon />
       </span>
