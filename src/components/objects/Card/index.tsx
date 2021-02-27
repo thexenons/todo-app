@@ -7,11 +7,10 @@ type CardProps = {
   children: ReactChild | ReactChild[]
   title?: string
   subtitle?: string
-  hidden?: boolean
 }
 
-const Card = ({ children, title, subtitle, hidden }: CardProps): JSX.Element => (
-  <div className={cn(classes.card, { [classes.hidden]: hidden })}>
+const Card = ({ children, title, subtitle }: CardProps): JSX.Element => (
+  <div className={cn(classes.card)}>
     {(title || subtitle) && (
       <div className={classes['card-header']}>
         {title && <div className={classes['card-header-title']}>{title}</div>}

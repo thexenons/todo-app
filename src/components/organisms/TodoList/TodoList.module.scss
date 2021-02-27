@@ -18,6 +18,17 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    transition: opacity $transition-duration_fast, transform $transition-duration_fast;
+
+    &--hidden {
+      opacity: 0;
+      transform: scale(0.75);
+      min-height: calc(25vh + #{relativeSpacing(2)});
+
+      > div:first-child {
+        flex: 1 1 auto;
+      }
+    }
   }
 
   @include media(sm) {
