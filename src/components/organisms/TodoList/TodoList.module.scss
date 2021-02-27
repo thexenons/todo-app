@@ -6,6 +6,7 @@
   position: relative;
   font-size: spacing(1);
   transition: font-size $transition-duration_fast;
+  min-height: 33vh;
 
   > * + * {
     margin-top: spacing(1);
@@ -25,6 +26,10 @@
 
   @include media(sm) {
     font-size: spacing(1.25);
+  }
+
+  @include media(lg) {
+    min-height: unset;
   }
 }
 
